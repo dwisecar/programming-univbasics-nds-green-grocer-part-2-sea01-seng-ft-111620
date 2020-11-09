@@ -8,7 +8,7 @@ def apply_coupons(cart, coupons)
     coupons.each do | coupon_element |
       if grocery_item[:item] == coupon_element[:item]
         binding.pry
-        if coupon_element[:num] < grocery_item[:count]
+        if coupon_element[:num] <= grocery_item[:count]
           new_item_with_coupon = {:item => "#{grocery_item[:item]} W/COUPON", :price => (coupon_element[:cost] / coupon_element[:num]), 
           :clearance => grocery_item[:clearance],
           :count => coupon_element[:num]}
