@@ -6,7 +6,9 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   cart.each do |grocery_item|
     binding.pry
-    #if grocery_item[:item]
+    if grocery_item[:item] == coupons[0][:item]
+      
+    end
   end
 end
 
