@@ -5,13 +5,18 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   cart.each do |grocery_item|
-    binding.pry
+    
     if grocery_item[:item] == coupons[0][:item]
       if coupons[0][:num] > grocery_item[:count]
-        new_item_with_coupon = grocery_item[:item] + ""
+        new_item_with_coupon = {:item => grocery_item[:item] + " W/COUPON", :price => (coupons[0][:cost] / coupons[0][:num]), 
+          :clearance => grocery_item[:clearance],
+          :count => grocery_item[:count] - coupons[0][:num]}
+        cart << new_item_with_coupon
+        grocery_item[:count] -= coupons[0][:num]
       end
     end
   end
+  cart
 end
 
 def apply_clearance(cart)
