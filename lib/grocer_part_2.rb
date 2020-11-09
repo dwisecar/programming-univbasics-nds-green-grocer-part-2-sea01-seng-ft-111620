@@ -11,9 +11,10 @@ def apply_coupons(cart, coupons)
         new_item_with_coupon = {:item => "#{grocery_item[:item]}  W/COUPON", :price => (coupons[0][:cost] / coupons[0][:num]), 
           :clearance => grocery_item[:clearance],
           :count => coupons[0][:num]}
+          
         cart << new_item_with_coupon
         grocery_item[:count] -= coupons[0][:num]
-        
+        binding.pry
       end
       
     end
