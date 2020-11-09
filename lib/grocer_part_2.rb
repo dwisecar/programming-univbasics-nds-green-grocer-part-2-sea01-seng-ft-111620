@@ -14,6 +14,7 @@ def apply_coupons(cart, coupons)
         cart << new_item_with_coupon
         grocery_item[:count] -= coupons[0][:num]
       end
+      binding.pry
     end
   end
   cart
