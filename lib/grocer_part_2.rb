@@ -51,7 +51,10 @@ def checkout(cart, coupons)
   final_total = 0;
   
   cart_CC.each do | cart_element |
-    final_total += cart_element[:price]
+    final_total += (cart_element[:price] * cart_element[:count])
+  end
+  if final_total > 100
+    final_total *= 0.9
   end
   final_total
 end
