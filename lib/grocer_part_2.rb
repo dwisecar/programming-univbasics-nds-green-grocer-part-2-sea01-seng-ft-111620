@@ -27,7 +27,9 @@ def apply_clearance(cart)
   #
   # REMEMBER: This method **should** update cart
   
-  
+  for each item
+    if :clearance  = TRUE
+      
   
 end
 
