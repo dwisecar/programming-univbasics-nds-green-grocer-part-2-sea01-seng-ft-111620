@@ -7,7 +7,9 @@ def apply_coupons(cart, coupons)
   cart.each do |grocery_item|
     binding.pry
     if grocery_item[:item] == coupons[0][:item]
-      
+      if coupons[0][:num] > grocery_item[:count]
+        new_item_with_coupon = grocery_item[:item] + ""
+      end
     end
   end
 end
