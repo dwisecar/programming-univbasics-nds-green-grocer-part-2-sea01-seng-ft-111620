@@ -27,10 +27,12 @@ def apply_clearance(cart)
   #
   # REMEMBER: This method **should** update cart
   
-  for each item
-    if :clearance  = TRUE
-      
-  
+  cart.each do | cart_element |
+    if cart_element[:clearance]
+      cart_element[:price] = (cart_element[:price] * .8).round(2)
+    end
+  end
+  cart
 end
 
 def checkout(cart, coupons)
