@@ -7,7 +7,7 @@ def apply_coupons(cart, coupons)
   cart.each do |grocery_item|
     binding.pry
     #if grocery_item[:item]
-  
+  end
 end
 
 def apply_clearance(cart)
